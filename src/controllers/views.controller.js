@@ -46,6 +46,18 @@ class ViewsController {
         res.render('details', { _id, title, description, price, stock, category, cartId });
     }
 
+    createProductRender = (req, res) => {
+        res.render('createProduct'); 
+    }
+
+    updateProductRender = (req, res) => {
+        res.render('updateProduct'); 
+    }
+
+    deleteProductRender = (req, res) => {
+        res.render('deleteProduct'); 
+    }
+
 }
 
 export const viewsController = new ViewsController();
