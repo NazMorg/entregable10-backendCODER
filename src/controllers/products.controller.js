@@ -1,4 +1,5 @@
 import { productsService } from '../services/products.service.js'
+import { generateMock } from '../utils.js';
 //import errorHandler ?
 
 class ProductsController {
@@ -70,6 +71,11 @@ class ProductsController {
         } catch (error) {
             res.status(500).json({ error: error.message });
         }
+    }
+
+    productsMock = async (req, res) => {
+        const productsMock = Array.from({ length: 100 }, generateMock);
+        res.status(200).json({ message: "Productos simulados", productsMock });
     }
 }
 
